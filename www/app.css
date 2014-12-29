@@ -4236,12 +4236,6 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   padding-right: 0;
   position: absolute;
   width: 100%;
-  overflow: hidden;
-}
-.scrollable {
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  height: 100%;
 }
 #food-container {
   width: 100%;
