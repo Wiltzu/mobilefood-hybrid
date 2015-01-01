@@ -21,15 +21,13 @@
     </div>
 </nav>
 
-<div id="main-content" class="container-fluid">
-    <div class="scrollable" on-swipeleft="navigateNextDay" on-swiperight="navigatePreviousDay">
-        <div id="food-container">
-            {{#if loadingFoods}}
-                {{>loading}}
-            {{else}}
-                {{>foodsbyrestaurant}}
-            {{/if}}
-        </div>
+<div id="main-content" class="container-fluid overthrow" on-swipeleft="navigateNextDay" on-swiperight="navigatePreviousDay">
+    <div id="food-container">
+        {{#if loadingFoods}}
+            {{>loading}}
+        {{else}}
+            {{>foodsbyrestaurant}}
+        {{/if}}
     </div>
 </div>
 

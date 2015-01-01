@@ -5,7 +5,7 @@ var FoodService = require('./foodservice.js');
 var MainViewModel = require('./mainviewmodel.js');
 
 $(function() {
-  foodService = new FoodService(CONFIG);
-  var mainViewModel = new MainViewModel(foodService);
+	foodService = new FoodService(CONFIG);
+	var mainViewModel = new MainViewModel(foodService);
 });
 
