@@ -21,8 +21,8 @@
     </div>
 </nav>
 
-<div id="main-content" class="container-fluid overthrow" on-swipeleft="navigateNextDay" on-swiperight="navigatePreviousDay">
-    <div id="food-container">
+<div id="main-content" on-swipeleft="navigateNextDay" on-swiperight="navigatePreviousDay">
+    <div id="food-container" class="overthrow">
         {{#if loadingFoods}}
             {{>loading}}
         {{else}}

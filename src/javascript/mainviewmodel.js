@@ -9,8 +9,8 @@ function MainViewModel(foodService) {
 
   var today = new Date();
   initRactive();
-  initWall();
   showFoodsFor(today);
+  initWall();
 
   function initRactive() {
     var selectedDay = new Date(today.getTime()),
