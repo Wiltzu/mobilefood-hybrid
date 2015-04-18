@@ -8,14 +8,15 @@ function FoodService(CONFIG) {
   * @param {Function} callback like function(data, error)
   */
   this.getRestaurantInfo = function (index, callback) {
-    $.ajax({dataType: "jsonp",
-            url: getRestServiceUrlFor(2014, 45),
+    $.ajax({/*dataType: "jsonp",*/
+            url: getInfoServiceUrlFor("unica", "tottisalmi"),
             success: function(data) { 
-              callback(parseRestaurant(data, index), null); 
+              //callback(parseRestaurant(data, index), null); 
+              callback(data.restaurant_info);
             },
             error: function() {
               callback(null, "error");
-            }
+            },
     });
   }
 
@@ -26,18 +27,27 @@ function FoodService(CONFIG) {
     return {};
   }
 
+  function getInfoServiceUrlFor(chain, restaurantName) {
+    return CONFIG.REST_URL + "info/chain/" + chain + "/restaurant/" + restaurantName;
+  }
+
   function getRestServiceUrlFor(year, week) {
     return CONFIG.REST_URL + "?restaurant=unica&year=" + year + "&week=" + week;
+  }
+
+  function getFoodServiceUrlFor(chain, year, week, weekDay) {
+    return CONFIG.REST_URL + "foods/chain/" + chain + "/" + year + "/" + week + "/" + weekDay;
   }
 
   /*
   * @param {Function} callback like function(data, error).
   */
   this.getFoodsFor = function (year, week, weekday, callback) {
-    $.ajax({dataType: "jsonp",
-            url: getRestServiceUrlFor(year, week),
+    $.ajax({/*dataType: "jsonp",*/
+            url: getFoodServiceUrlFor("unica", year, week, weekday),
             success: function(data) { 
-              callback(parseFoodForADay(data, weekday), null); 
+              //callback(parseFoodForADay(data, weekday), null);
+              callback(data.restaurants); 
             },
             error: function() {
               callback(null, "error");

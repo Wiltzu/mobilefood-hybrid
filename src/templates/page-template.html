@@ -58,7 +58,7 @@
             <div class="container-fluid">
                 <div class="restaurant-header">
                     <span class="glyphicon glyphicon-info-sign pull-right rest-info" on-tap="showRestaurantInfoClicked:{{restaurantName}},{{index}}"></span>
-                    <h3>{{restaurantName}}</h3>
+                    <h3>{{foodlist_info.id}}</h3>
                     {{#if alert}}
                         <div class="alert alert-danger" role="alert">{{alert}}</div>
                     {{/if}}
@@ -84,7 +84,7 @@
                 {{else}}
                     <table class="table">
                         <tbody>
-                            {{#each lunches}}
+                            {{#each daily_foods}}
                                 <tr>
                                     <td>{{name}}</td>
                                     <td>{{diets}}</td>
